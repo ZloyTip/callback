@@ -1,0 +1,15 @@
+{
+    "name": "ZloyTip/callback",
+    "description": "Callback form",
+    "require": {
+        "swiftmailer/swiftmailer": "5.4",
+        "respect/validation": "0.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eugen Nichikov",
+            "email": "jk@47.kiev.ua"
+        }
+    ]
+}

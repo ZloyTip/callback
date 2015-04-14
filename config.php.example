@@ -1,0 +1,29 @@
+<?php
+use Respect\Validation\Validator as v;
+
+return array(
+    'recipients' => array(
+        'my@email.com',
+    ),
+    'from' => 'my@email.com',
+    'subject' => 'Запрос обратного звонка '.$_SERVER['HTTP_HOST'],
+    'transport' => Swift_MailTransport::newInstance(),
+    'fields' => array(
+        'name' => array(
+            'name' => 'Ваше имя',
+            'validator' => v::notEmpty()
+        ),
+        'email' => array(
+            'name' => 'Телефон или E-mail',
+            'validator' => v::notEmpty()->email()
+        ),
+        'question' => array(
+            'name' => 'Ваш вопрос',
+            'validator' => null
+        ),
+    ),
+    'messages' => array(
+        'notEmpty' => 'Необходимо заполнить',
+        'email' => 'Некорректный email',
+    ),
+);
